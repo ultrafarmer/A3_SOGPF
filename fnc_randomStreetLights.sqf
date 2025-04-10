@@ -13,10 +13,10 @@ _radius = _this select 1;
 _NrOfLights = _this select 2;
 _rndDistanceFromHouse = _this select 3;
 
-_roads = nearestTerrainObjects [_centerpos, ["House"], _radius];
+_lighttargets = nearestTerrainObjects [_centerpos, ["House"], _radius];
 for "_i" from 1 to _NrOfLights do {  
   
-private _roadposition = getPos (selectRandom _roads); 
+private _roadposition = getPos (selectRandom _lighttargets); 
 private _position = [[[_roadposition, _rndDistanceFromHouse]], []] call BIS_fnc_randomPos; 
 private _lightSource = "#lightpoint" createVehicleLocal _position;  
 _rndBrightness = [0.02,0.05] call BIS_fnc_randomNum; 
