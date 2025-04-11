@@ -59,7 +59,7 @@ params [
 	wingman_aircraft attachTo [(vehicle player), [_xformpos,(_yformpos + 18),_zformpos]];
 	[1, "BLACK", 0.5, 1] spawn BIS_fnc_fadeEffect;
 	
-	_nul = [] execVM "fnc_RandomWingmanJoinTalk.sqf";
+	// _nul = [] execVM "fnc_RandomWingmanJoinTalk.sqf";
 	
 	if (_wingman_twinfire == 1 ) then{
 		player addEventHandler ["FiredMan", { params ["", "_weapon", "", "_mode"]; 
@@ -82,7 +82,7 @@ params [
 	
 	// Brute force make spawned wingmen, leave formation radius 80
 	_wingmanoff = player addAction ["Wingman OFF", { 
-		_nul = [] execVM "fnc_RandomWingmanLeaveTalk.sqf";
+		// _nul = [] execVM "fnc_RandomWingmanLeaveTalk.sqf";
 		[]spawn {
 			private _list = nearestObjects [(vehicle player), [], 80]; 
 			_list = _list - [vehicle player];
